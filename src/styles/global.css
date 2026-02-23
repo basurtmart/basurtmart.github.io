@@ -264,3 +264,85 @@ body {
         transform: translateY(0);
     }
 }
+
+/* ===== MOBILE NAV ===== */
+
+.desktop {
+    display: none;
+}
+
+.menu-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    display: grid;
+    place-content: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    display: block;
+    transition: all 0.25s ease;
+}
+
+/* animación hamburguesa */
+
+.menu-btn.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-btn.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ===== mobile menu panel ===== */
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px 20px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(11, 17, 32, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-menu a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.mobile-menu a:hover {
+    color: var(--text);
+}
+
+.mobile-menu.show {
+    display: flex;
+}
+
+/* ===== desktop breakpoint ===== */
+
+@media (min-width: 768px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .desktop {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: none !important;
+    }
+}
