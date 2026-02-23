@@ -1,4 +1,5 @@
 import { profile } from "./data/profile";
+import GithubRepos from "./components/GithubRepos";
 
 export default function App() {
     return (
@@ -65,6 +66,12 @@ export default function App() {
                         </a>
                     ))}
                 </div>
+            </section>
+
+            {/* ===== GITHUB REPOS ===== */}
+            <section className="section">
+                <h3 className="section-title">Repositorios Recientes</h3>
+                <GithubRepos />
             </section>
 
             {/* ===== FOOTER ===== */}
